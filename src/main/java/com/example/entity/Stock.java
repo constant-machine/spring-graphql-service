@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,11 +13,10 @@ public class Stock implements Serializable {
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
     @Column(name = "emitent_name", nullable = false)
     private String emitent;
-    @Column(name = "price")
     private double price;
 
     public int getId() {
