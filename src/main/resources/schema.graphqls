@@ -1,7 +1,12 @@
 type Query {
     userById(id: ID): User
-    stockById(id: ID): Stock
-    portfolioByUser(id: ID): [Portfolio]
+#    stockById(id: ID): Stock
+#    portfolioByUser(id: ID): [Portfolio]
+}
+
+type Mutation {
+    createUser(name: String!): User
+#    createStock(name: String!, emitent: String, price: Float): Stock
 }
 
 type User {
@@ -9,15 +14,15 @@ type User {
     name: String
 }
 
-type Stock {
-    id: ID
-    name: String
-    emitent: String
-    price: Float
-}
-
-type Portfolio {
-    userId: ID
-    stock: ID
-    quantity: Int
-}
+#type Stock {
+#    id: ID
+#    name: String
+#    emitent: String
+#    price: Float
+#}
+#
+#type Portfolio {
+#    userId: ID
+#    stock: ID
+#    quantity: Int
+#}

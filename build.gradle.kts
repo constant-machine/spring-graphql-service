@@ -1,3 +1,6 @@
+val liquibaseVersion = "3.8.0"
+val postgresVersion = "42.2.18"
+
 plugins {
     java
     id("org.springframework.boot") version "2.3.4.RELEASE"
@@ -11,20 +14,20 @@ repositories {
 dependencies {
     implementation("com.google.guava:guava:29.0-jre")
 
-    implementation("com.graphql-java:graphql-java:15.0")
-    implementation("com.graphql-java:graphql-java-spring-boot-starter-webmvc:2.0")
-    implementation("com.graphql-java:graphql-java-tools:5.2.4")
-    implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
+    implementation("com.graphql-java-kickstart:graphql-java-tools:6.2.0")
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:8.0.0")
+    implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:8.0.0")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.postgresql:postgresql:$postgresVersion")
+    //implementation("org.liquibase:liquibase-core:$liquibaseVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+//    testImplementation("com.h2database:h2")
 //    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
 //    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
-
-    runtimeOnly("com.h2database:h2")
 }
 
 tasks.withType<Test> {
