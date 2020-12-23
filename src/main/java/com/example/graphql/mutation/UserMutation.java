@@ -1,4 +1,4 @@
-package com.example.graphql;
+package com.example.graphql.mutation;
 
 import com.example.entity.User;
 import com.example.service.UserService;
