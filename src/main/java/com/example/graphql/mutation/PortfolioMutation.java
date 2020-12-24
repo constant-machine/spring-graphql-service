@@ -13,6 +13,6 @@ public class PortfolioMutation implements GraphQLMutationResolver {
     private PortfolioService portfolioService;
 
     public Portfolio createPortfolio(final int userId, final int stockId, final int quantity) {
-        return this.portfolioService.createPortfolio(userId, stockId, quantity);
+        return portfolioService.createPortfolio(userId, stockId, quantity);
     }
 }

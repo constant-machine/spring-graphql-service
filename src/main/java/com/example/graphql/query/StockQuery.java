@@ -15,6 +15,6 @@ public class StockQuery implements GraphQLQueryResolver {
     private StockService stockService;
 
     public Optional<Stock> stockById(final int id) {
-        return this.stockService.getStock(id);
+        return stockService.findById(id);
     }
 }

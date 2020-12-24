@@ -13,6 +13,6 @@ public class UserMutation implements GraphQLMutationResolver {
     private UserService userService;
 
     public User createUser(final String name) {
-        return this.userService.createUser(name);
+        return userService.create(name);
     }
 }

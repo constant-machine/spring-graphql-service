@@ -13,6 +13,6 @@ public class StockMutation implements GraphQLMutationResolver {
     private StockService stockService;
 
     public Stock createStock(final String name, final String emitent, final Double price) {
-        return this.stockService.createStock(name, emitent, price);
+        return stockService.createStock(name, emitent, price);
     }
 }
