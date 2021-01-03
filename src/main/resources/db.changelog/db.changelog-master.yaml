@@ -1,3 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/changelog/migrations/1570103331_create_installation_table.yaml

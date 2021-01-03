@@ -5,6 +5,7 @@ plugins {
     java
     id("org.springframework.boot") version "2.3.4.RELEASE"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
+    id("org.liquibase.gradle") version "2.0.4"
 }
 
 repositories {
@@ -21,11 +22,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.postgresql:postgresql:$postgresVersion")
-    //implementation("org.liquibase:liquibase-core:$liquibaseVersion")
+    implementation("org.liquibase:liquibase-core:$liquibaseVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
-//    testImplementation("com.h2database:h2")
+    testImplementation("com.h2database:h2")
 //    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
 //    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
 }

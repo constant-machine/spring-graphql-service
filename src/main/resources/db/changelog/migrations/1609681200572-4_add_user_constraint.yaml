@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1609681200572-4
+      author: Constantine (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: portfolios
+            constraintName: fk9xt36kgm9cxsf79r2me0d9f6u
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true
