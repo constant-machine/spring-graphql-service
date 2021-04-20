@@ -66,4 +66,14 @@ public class Stock implements Serializable {
     public int hashCode() {
         return Objects.hash(getId(), getName(), getEmitent(), getPrice());
     }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", emitent='" + emitent + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

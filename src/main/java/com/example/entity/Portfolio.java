@@ -68,4 +68,14 @@ public class Portfolio implements Serializable {
     public int hashCode() {
         return Objects.hash(getId(), getUser(), getStock(), getQuantity());
     }
+
+    @Override
+    public String toString() {
+        return "Portfolio{" +
+                "id=" + id +
+                ", user=" + user +
+                ", stock=" + stock +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
