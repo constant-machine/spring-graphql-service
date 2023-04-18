@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: Konstantin Safutin
+      changes:
+        - createIndex:
+            indexName: idx_user_name
+            tableName: users
+            columns:
+              - column:
+                  name: name
+            unique: true
+        - createIndex:
+            indexName: idx_stock_name
+            tableName: stocks
+            columns:
+              - column:
+                  name: name
+            unique: true

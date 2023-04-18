@@ -1,10 +1,17 @@
-package com.example.entity;
+package com.example.dao.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "stocks")
 public class Stock implements Serializable {
 
@@ -13,7 +20,7 @@ public class Stock implements Serializable {
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     @Column(name = "emitent_name", nullable = false)
     private String emitent;

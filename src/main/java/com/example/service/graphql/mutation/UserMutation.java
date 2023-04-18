@@ -1,18 +1,18 @@
-package com.example.graphql.mutation;
+package com.example.service.graphql.mutation;
 
-import com.example.entity.User;
+import com.example.model.UserDto;
 import com.example.service.UserService;
 import graphql.kickstart.tools.GraphQLMutationResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class UserMutation implements GraphQLMutationResolver {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    public User createUser(final String name) {
+    public UserDto createUser(String name) {
         return userService.create(name);
     }
 }

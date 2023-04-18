@@ -1,16 +1,16 @@
 databaseChangeLog:
   - changeSet:
-      id: 1609681200572-5
-      author: Constantine (generated)
+      id: 4
+      author: Konstantin Safutin
       changes:
         - addForeignKeyConstraint:
-            baseColumnNames: stock_id
+            baseColumnNames: user_id
             baseTableName: portfolios
-            constraintName: fktbnfhhvrpflvutbd4ystqow6c
+            constraintName: user_id_fk
             deferrable: false
             initiallyDeferred: false
             onDelete: NO ACTION
             onUpdate: NO ACTION
             referencedColumnNames: id
-            referencedTableName: stocks
+            referencedTableName: users
             validate: true

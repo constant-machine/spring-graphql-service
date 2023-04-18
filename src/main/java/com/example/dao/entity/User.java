@@ -1,4 +1,8 @@
-package com.example.entity;
+package com.example.dao.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -6,6 +10,9 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class User implements Serializable {
 
@@ -14,7 +21,7 @@ public class User implements Serializable {
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Portfolio> portfolios;

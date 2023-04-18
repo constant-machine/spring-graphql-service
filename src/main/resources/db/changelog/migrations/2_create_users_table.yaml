@@ -1,31 +1,22 @@
 databaseChangeLog:
   - changeSet:
-      id: 1609681200572-3
-      author: Constantine (generated)
+      id: 2
+      author: Konstantin Safutin
       changes:
         - createTable:
+            tableName: users
             columns:
               - column:
                   autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: stocks_pkey
+                    primaryKeyName: users_pkey
                   name: id
                   type: INTEGER
               - column:
                   constraints:
                     nullable: false
-                  name: emitent_name
-                  type: VARCHAR(255)
-              - column:
-                  constraints:
-                    nullable: false
+                    unique: true
                   name: name
                   type: VARCHAR(255)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: price
-                  type: FLOAT8
-            tableName: stocks

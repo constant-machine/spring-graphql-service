@@ -1,31 +1,27 @@
 type Query {
-    userById(id: ID): User
-    stockById(id: ID): Stock
-    portfolioById(id: ID): Portfolio
-    portfoliosByUser(id: ID): [Portfolio]
+    findUser(userName: String): User
+    findStock(stockName: String): Stock
+    portfoliosByUser(userName: String): [Portfolio]
 }
 
 type Mutation {
     createUser(name: String!): User
     createStock(name: String!, emitent: String, price: Float): Stock
-    createPortfolio(userId: ID!, stockId: ID!, quantity: Int!): Portfolio
+    createPortfolio(userName: String!, stockName: String!, quantity: Int!): Portfolio
 }
 
 type User {
-    id: ID
     name: String
     portfolios: [Portfolio]
 }
 
 type Stock {
-    id: ID
     name: String
     emitent: String
     price: Float
 }
 
 type Portfolio {
-    id: ID
     user: User
     stock: Stock
     quantity: Int

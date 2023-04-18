@@ -1,10 +1,17 @@
-package com.example.entity;
+package com.example.dao.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "portfolios")
 public class Portfolio implements Serializable {
 
@@ -19,7 +26,7 @@ public class Portfolio implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "stock_id")
     private Stock stock;
-    private long quantity;
+    private Integer quantity;
 
     public int getId() {
         return id;
@@ -45,11 +52,11 @@ public class Portfolio implements Serializable {
         this.stock = stock;
     }
 
-    public long getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(long quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
@@ -59,7 +66,7 @@ public class Portfolio implements Serializable {
         if (!(o instanceof Portfolio)) return false;
         Portfolio portfolio = (Portfolio) o;
         return getId() == portfolio.getId() &&
-                getQuantity() == portfolio.getQuantity() &&
+                getQuantity().equals(portfolio.getQuantity()) &&
                 getUser().equals(portfolio.getUser()) &&
                 getStock().equals(portfolio.getStock());
     }

@@ -1,9 +1,13 @@
-package com.example.repository;
+package com.example.dao.repository;
 
-import com.example.entity.User;
+import com.example.dao.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
+
+    Optional<User> findByName(String userName);
 }

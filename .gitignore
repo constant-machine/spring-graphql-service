@@ -5,5 +5,5 @@
 build
 
 *.iml
-.idea/
+.idea
 target/

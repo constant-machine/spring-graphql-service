@@ -1,11 +1,11 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/migrations/1609681200572-1_create_portfolios_table.yaml
+      file: db/changelog/migrations/1_create_portfolios_table.yaml
   - include:
-      file: db/changelog/migrations/1609681200572-2_create_users_table.yaml
+      file: db/changelog/migrations/2_create_users_table.yaml
   - include:
-      file: db/changelog/migrations/1609681200572-3_create_stocks_table.yaml
+      file: db/changelog/migrations/3_create_stocks_table.yaml
   - include:
-      file: db/changelog/migrations/1609681200572-4_add_user_constraint.yaml
+      file: db/changelog/migrations/4_add_user_constraint.yaml
   - include:
-      file: db/changelog/migrations/1609681200572-5_add_stock_constraint.yaml
+      file: db/changelog/migrations/5_add_stock_constraint.yaml

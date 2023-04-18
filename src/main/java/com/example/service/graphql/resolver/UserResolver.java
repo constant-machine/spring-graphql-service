@@ -1,21 +1,21 @@
-package com.example.graphql.resolver;
+package com.example.service.graphql.resolver;
 
-import com.example.entity.Portfolio;
-import com.example.entity.User;
+import com.example.dao.entity.Portfolio;
+import com.example.dao.entity.User;
 import com.example.service.PortfolioService;
 import graphql.kickstart.tools.GraphQLResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class UserResolver implements GraphQLResolver<User> {
 
-    @Autowired
-    private PortfolioService portfolioService;
+    private final PortfolioService portfolioService;
 
-    public List<Portfolio> portfolios(final User user) {
+    public List<Portfolio> portfolios(User user) {
         return portfolioService.getByUser(user);
     }
 }

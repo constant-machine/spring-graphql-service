@@ -1,12 +1,15 @@
 package com.example;
 
-import com.example.entity.User;
+import com.example.dao.entity.User;
+import com.example.model.UserDto;
 import com.example.service.UserService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
@@ -18,10 +21,10 @@ class UserServiceTest {
 
     @Test
     public void userServiceTest() {
-        User user = userService.create(userName);
-        Assertions.assertEquals(userName, user.getName());
-        Assertions.assertFalse(userService.find(user).isEmpty());
-        Assertions.assertEquals(userName, userService.find(user).get().getName());
-        Assertions.assertEquals(user.getId(), userService.find(user).get().getId());
+        UserDto user = userService.create(userName);
+        assertEquals(userName, user.getName());
+        User userFound = userService.findUserByName(user.getName());
+        assertNotNull(userFound);
+        assertEquals(userName, userFound.getName());
     }
 }
